@@ -27,8 +27,11 @@ class ComentariosController extends Controller
                                 comen.fk_comentario_id = c.comentario_id');
 
         $comentarios = Comentario::where('fk_comentario_id',0)->get();
-        return view('comentarios',compact('comentarios','respuestas'));
-                            
+        $eloquent = Comentario::all();
+      
+      
+        return view('comentarios',compact('comentarios','respuestas','eloquent'));
+
     }
 
 

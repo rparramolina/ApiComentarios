@@ -23,5 +23,11 @@ class Comentario extends Model
         'comentario', 'fk_comentario_id',
     ];
 
+    public function parent()
+    {
+        return $this->belongsTo(self::class, 'comentario_id','fk_comentario_id');
+    }
+
+
     
 }
